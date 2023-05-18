@@ -1,0 +1,4 @@
+Electrical EngineeringD,EGE102,100
+Ahmed abdo,19007250,-8,10,20,60
+Mohamed ahmad,19007220,10,10,20,60
+Mina akram,19007229,10,10,20,60

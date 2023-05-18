@@ -1,0 +1,4 @@
+English Alevel,ESH100,100
+Ahmed abd el megied,19007250,10,8,20,60
+Mohamed ahmad shaker,19007220,10,10,20,60
+Mina akram wagdy,19007220,10,10,20,60
