@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
+
 class BranchCoverage_StudentTest {
 
     Exception exception;
@@ -33,7 +34,7 @@ class BranchCoverage_StudentTest {
     @Test
     void Sum_student_data2() throws IllegalArgumentException {
         // Test upper boundaries of A
-        Student student8 = new Student(10, 10, 20, 56);
+        Student student8 = new Student(10, 10, 20, 53);
         student8.calculate_grade();
         assertEquals("A", student8.getGrade(), "There is an error in the upper boundary of A grade");
         assertEquals(4, student8.getGpa(), "There is an error in the upper boundary of GPA 4");
@@ -71,22 +72,13 @@ class BranchCoverage_StudentTest {
     @Test
     void Sum_student_data6() throws IllegalArgumentException {
         // Test upper boundaries of B-
-        Student student16 = new Student(10, 10, 20, 39);
+        Student student16 = new Student(10, 10, 20, 38);
         student16.calculate_grade();
         assertEquals("B-", student16.getGrade(), "There is an error in the upper boundary of B- grade");
         assertEquals(2.7, student16.getGpa(), "There is an error in the upper boundary of GPA 2.7");
 
     }
 
-    @Test
-    void Sum_student_data7() throws IllegalArgumentException {
-        // test upper boundaries of F
-        Student student28 = new Student(10, 10, 20, 19);
-        student28.calculate_grade();
-        assertEquals("F", student28.getGrade(), "there is an error in upper boundary of F grade");
-        assertEquals(0, student28.getGpa(), "there is an error in upper boundary of gpa 0");
-
-    }
 
     @Test
     void Sum_student_data8() throws IllegalArgumentException {
@@ -100,7 +92,7 @@ class BranchCoverage_StudentTest {
     @Test
     void Sum_student_data9() throws IllegalArgumentException {
         // Test upper boundaries of C
-        Student student20 = new Student(10, 10, 20, 32);
+        Student student20 = new Student(10, 10, 20, 30);
         student20.calculate_grade();
         assertEquals("C", student20.getGrade(), "There is an error in the upper boundary of C grade");
         assertEquals(2, student20.getGpa(), "There is an error in the upper boundary of GPA 2");
@@ -133,6 +125,15 @@ class BranchCoverage_StudentTest {
         assertEquals(1, student26.getGpa(), "there is an error in upper boundary of gpa 1");
 
     }
+    @Test
+    void Sum_student_data7() throws IllegalArgumentException {
+        // test upper boundaries of F
+        Student student28 = new Student(10, 10, 20, 19);
+        student28.calculate_grade();
+        assertEquals("F", student28.getGrade(), "there is an error in upper boundary of F grade");
+        assertEquals(0, student28.getGpa(), "there is an error in upper boundary of gpa 0");
+
+    }
 
     @Test
     void Sum_student_data13() throws IllegalArgumentException {
@@ -143,6 +144,7 @@ class BranchCoverage_StudentTest {
         assertEquals(ExceptionConstants.student_Sum_grade, exception1.getMessage(),
                 "there is an error at negative mark grade");
     }
+
     /*******************************Validate_Student_data*******************************/
     @Test
     void validate_student_data_invalidName() throws IllegalArgumentException {
@@ -155,7 +157,7 @@ class BranchCoverage_StudentTest {
 
     @Test
     void validate_student_data_InvalidCode() throws IllegalArgumentException {
-        // Test invalid name
+        // Test invalid code
         exception = assertThrows(IllegalArgumentException.class, () -> {
             student.validate_student_data("Bill Gates", "ABC123", "8", "8", "18", "56");
         });
@@ -164,7 +166,7 @@ class BranchCoverage_StudentTest {
 
     @Test
     void validate_student_data_BlankActivitiesMark() throws IllegalArgumentException {
-        // Test invalid name
+        // Test invalid activities mark
         exception = assertThrows(IllegalArgumentException.class, () -> {
             student.validate_student_data("Bill Gates", "1234567A", " ", "8", "18", "56");
         });
@@ -173,7 +175,7 @@ class BranchCoverage_StudentTest {
 
     @Test
     void validate_student_data_BlankOralMark() throws IllegalArgumentException {
-        // Test invalid name
+        // Test invalid oral mark
         exception = assertThrows(IllegalArgumentException.class, () -> {
             student.validate_student_data("Bill Gates", "1234567A", "8", " ", "18", "56");
         });
@@ -182,7 +184,7 @@ class BranchCoverage_StudentTest {
 
     @Test
     void validate_student_data_InvalidMidtermMark_String() throws IllegalArgumentException {
-        // Test invalid name
+        // Test invalid midterm mark
         exception = assertThrows(IllegalArgumentException.class, () -> {
             student.validate_student_data("Bill Gates", "1234567A", "8", "8", "A", "56");
         });
@@ -191,7 +193,7 @@ class BranchCoverage_StudentTest {
 
     @Test
     void validate_student_data_InvalidFinalMark_String() throws IllegalArgumentException {
-        // Test invalid name
+        // Test invalid final mark
         exception = assertThrows(IllegalArgumentException.class, () -> {
             student.validate_student_data("Bill Gates", "1234567A", "8", "8", "18", "BC");
         });
@@ -200,7 +202,7 @@ class BranchCoverage_StudentTest {
 
     @Test
     void validate_student_data_InvalidActivitiesMark() throws IllegalArgumentException {
-        // Test invalid name
+        // Test invalid activities mark
         exception = assertThrows(IllegalArgumentException.class, () -> {
             student.validate_student_data("Bill Gates", "1234567A", "15", "9", "17", "56");
         });
@@ -208,7 +210,7 @@ class BranchCoverage_StudentTest {
     }
     @Test
     void validate_student_data_InvalidOralMark() throws IllegalArgumentException {
-        // Test invalid name
+        // Test invalid oral mark
         exception = assertThrows(IllegalArgumentException.class, () -> {
             student.validate_student_data("Bill Gates", "1234567A", "8", "25", "17", "56");
         });
@@ -216,7 +218,7 @@ class BranchCoverage_StudentTest {
     }
     @Test
     void validate_student_data_InvalidMidtermMark() throws IllegalArgumentException {
-        // Test invalid name
+        // Test invalid midterm mark
         exception = assertThrows(IllegalArgumentException.class, () -> {
             student.validate_student_data("Bill Gates", "1234567A", "8", "8", "-9", "56");
         });
@@ -224,7 +226,7 @@ class BranchCoverage_StudentTest {
     }
     @Test
     void validate_student_data_InvalidFinalMark() throws IllegalArgumentException {
-        // Test invalid name
+        // Test invalid final mark
         exception = assertThrows(IllegalArgumentException.class, () -> {
             student.validate_student_data("Bill Gates", "1234567A", "8", "8", "15", "-60");
         });
@@ -232,7 +234,7 @@ class BranchCoverage_StudentTest {
     }
     @Test
     void validate_student_data_Valid() throws IllegalArgumentException {
-        // Test invalid name
+        // Test valid data
         student.validate_student_data("Bill Gates", "1234567A", "8", "8", "15", "56");
         assertEquals("Bill Gates", student.getStudent_name());
         assertEquals("1234567A", student.getStudent_number());
